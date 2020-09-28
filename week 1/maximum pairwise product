@@ -1,0 +1,28 @@
+#include<iostream>
+#include<stdio.h>
+#include<stdlib.h> 
+using namespace std;
+
+long long int max(int n,long int number[])
+{
+	long long int result=0;
+	for (int i=0;i<n;i++)
+	    for(int j=i+1;j<n;j++)
+		  if(number[i]*number[j]>result)
+			{
+				result=number[i] * number[j];
+			}
+	return result;
+}
+
+int main()
+{
+	long int n,number[n];
+	cin>>n; 
+	for(int i=0;i<n;i++)
+	{
+		cin>>number[i];
+	}
+	cout<<max(n,number);
+	return 0;
+}
